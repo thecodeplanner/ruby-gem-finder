@@ -1,9 +1,11 @@
 import GemItem from './GemItem'
 
-function GemsList({gems}) {
+function GemsList({gems, addList}) {
 
     let gemItems = gems.map((gem) => {
-        return ( <GemItem key={gem.gem_uri} name={gem.name} info={gem.info} downloads={gem.downloads} author={gem.authors}/>)
+        return ( 
+            <GemItem key={gem.gem_uri} gem={gem} addList={addList}/>
+        )
     })
     return (
         <div>
