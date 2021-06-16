@@ -5,7 +5,6 @@ import SavedList from './SavedList'
 import Home from './Home'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { useState, useEffect } from 'react'
-// import { Segment, Container } from 'semantic-ui-react'
 
 function App() {
   const [gems, setGems] = useState(null)
@@ -57,7 +56,7 @@ function App() {
             <Home />
           </Route>
           <Route exact path='/search'>
-            <Search setGems={setGems} setSearch={setSearch} />
+            <Search setSearch={setSearch} />
             {gems ? <GemsList gems={gems} addList={addList} list={list}/> : null}
           </Route>
           <Route exact path='/saved'>

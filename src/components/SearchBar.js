@@ -1,23 +1,7 @@
 import { useState } from 'react'
 import { Container, Form, Button, Icon } from 'semantic-ui-react'
 
-function SearchBar({setGems, setSearch}) {
-    // const [search, setSearch] = useState('')
-
-    // function handleSubmit(e) {
-    //     e.preventDefault()
-
-
-    //     // fetch(`/api/v1/search.json?query=${search}`)
-    //     //     .then(res => res.json())
-    //     //     .then(gemData => {
-    //     //         if (gemData.length === 0) {
-    //     //             alert(`${search} was not found. Please try again`)
-    //     //             e.target.reset()
-    //     //         }setGems(gemData)
-    //     //     })
-    // }
-
+function SearchBar({setSearch}) {
 
     return (
         <Container style={{ margin: '3em' }}>
@@ -31,7 +15,6 @@ function SearchBar({setGems, setSearch}) {
                     onChange={(e) => setSearch(e.target.value)}            
                 />
                 </Form.Field>
-                {/* <Button type='submit'> Find </Button> */}
             </Form>
         </Container>
 
