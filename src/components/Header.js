@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 
 function Header() {
-    const [activeItem, setActiveItem] = useState('home')
+    const [activeItem, setActiveItem] = useState('')
     return (
         <>
-            <Container textAlign='center' style={{ margin: '3em' }}>
-                <h1>Ruby Gem Finder <Icon name='gem outline' /></h1>
+            <Container textAlign='center' style={{ margin: '3em'}}>
+                <h1 className='title'>Ruby Gem Finder <Icon name='gem outline' /></h1>
             </Container>
             <Menu pointing secondary>
                 <NavLink to='/' exact>

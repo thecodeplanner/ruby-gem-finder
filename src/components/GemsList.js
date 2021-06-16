@@ -10,7 +10,7 @@ function GemsList({gems, addList, list}) {
     })
     return (
         <Container text>
-            <h1>Here are all the gems we found from your search:</h1>
+            <h1 className='home-title'>Here are all the gems we found from your search:</h1>
             {gemItems}
         </Container>
     )

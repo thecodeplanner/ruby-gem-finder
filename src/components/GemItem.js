@@ -10,12 +10,12 @@ function GemItem({gem, addList, list}) {
     }
  
     return (
-        <Segment>
-            <h1>{gem.name} {gem.version}</h1>
-            <Statistic label='Downloads' value={gem.downloads.toLocaleString()}/>
-            <p>{gem.info}</p>
-            <p>Creator(s): {gem.authors}</p>
-            {checkSaved ? <Button basic size='tiny' color='pink' disabled >saved</Button> : <Button onClick={handleSave} size='tiny' color='pink'>save</Button>}
+        <Segment style={{ padding: '3em', backgroundColor: '#FFF8D9' }}>
+            <h1 className='gem-name'>{gem.name} {gem.version}</h1>
+            <Statistic size='tiny' label='Downloads' value={gem.downloads.toLocaleString()}/>
+            <p className='gem-info'>{gem.info}</p>
+            <p className='gem-info'>Creator(s): {gem.authors}</p>
+            {checkSaved ? <Button basic size='small' color='red' disabled >saved</Button> : <Button onClick={handleSave} size='small' color='red'>save</Button>}
         </Segment>
     )
 }
