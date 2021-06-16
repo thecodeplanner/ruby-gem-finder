@@ -14,7 +14,7 @@ function SavedGem({gem, removeList}) {
             <p>{gem.info}</p>
             <p>Downloads: {gem.downloads}</p>
             <p>Creator(s): {gem.authors}</p>
-            <Button size='tiny' basic color='pink' onClick={handleUnsave}>unsave</Button>
+            <Button size='small' basic color='red' onClick={handleUnsave}>unsave</Button>
         </Segment>
     )
 }

@@ -10,7 +10,7 @@ function GemItem({gem, addList, list}) {
     }
  
     return (
-        <Segment style={{ padding: '3em', backgroundColor: '#FFF8D9' }}>
+        <Segment style={{ padding: '3em', backgroundColor: 'white' }}>
             <h1 className='gem-name'>{gem.name} {gem.version}</h1>
             <Statistic size='tiny' label='Downloads' value={gem.downloads.toLocaleString()}/>
             <p className='gem-info'>{gem.info}</p>

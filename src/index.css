@@ -17,17 +17,23 @@ code {
 
 .title {
     font-family: 'Staatliches', 'cursive';
-    font-size: 80px;
+    font-size: 60px;
     color: #BB371A;
 }
 
 .home-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
+  font-size: 28px;
 }
 .home-text {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
+}
+
+.find-text {
+  font-family: 'Staatliches', 'cursive';
+  font-size: 30px;
+  color: #BB371A;
 }
 
 .gem-name {

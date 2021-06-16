@@ -9,7 +9,7 @@ function Header() {
             <Container textAlign='center' style={{ margin: '3em'}}>
                 <h1 className='title'>Ruby Gem Finder <Icon name='gem outline' /></h1>
             </Container>
-            <Menu pointing secondary>
+            <Menu inverted >
                 <NavLink to='/' exact>
                     <Menu.Item name='home' active={activeItem === 'home'} onClick={() => setActiveItem('home')} />
                 </NavLink>

@@ -11,7 +11,7 @@ function SavedList({list, removeList}) {
     })
     return (
         <Container text>
-            <h1>Saved Gems:</h1>
+            <h1 className='find-text'>Here are your saved gems:</h1>
             {savedGems}
         </Container>
     )
