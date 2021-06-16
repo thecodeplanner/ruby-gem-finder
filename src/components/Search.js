@@ -17,7 +17,7 @@ function Search({setGems}) {
     }
 
     return (
-        <Container style={{ marginTop: '3em' }}>
+        <Container style={{ margin: '3em' }}>
             <Form onSubmit={handleSubmit} align='center'>
                 <Form.Field inline>
                 <input 

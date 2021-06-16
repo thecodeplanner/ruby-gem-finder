@@ -2,10 +2,10 @@ import Header from './Header'
 import Search from './Search'
 import GemsList from './GemsList'
 import SavedList from './SavedList'
+import Home from './Home'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { Segment, Grid } from 'semantic-ui-react'
-
-
+import { Segment, Container } from 'semantic-ui-react'
 
 function App() {
   const [gems, setGems] = useState(null)
@@ -18,8 +18,6 @@ function App() {
     }
   }, [])
 
-  // console.log(gems)
-  // console.log(list)
 
   function addList(addedGem) {
     const newSavedList = [...list, addedGem]
@@ -39,16 +37,23 @@ function App() {
   }
 
   return (
-    <div >
-      <Segment>
-        <Header />
-        <Search setGems={setGems} />
-      </Segment>
-          {gems ? <GemsList gems={gems} addList={addList} list={list}/> : null}
-      
-          {(list.length >= 1) ? <SavedList list={list} removeList={removeList}/> : null}
-
-    </div>
+    <>
+      <Router>
+          <Header />
+        <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route exact path='/search'>
+            <Search setGems={setGems} />
+            {gems ? <GemsList gems={gems} addList={addList} list={list}/> : null}
+          </Route>
+          <Route exact path='/saved'>
+            {(list.length >= 1) ? <SavedList list={list} removeList={removeList}/> : null}
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 

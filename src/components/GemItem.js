@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Segment, Button } from 'semantic-ui-react'
+import { Segment, Button, Statistic } from 'semantic-ui-react'
 
 function GemItem({gem, addList, list}) {
 
@@ -13,7 +12,7 @@ function GemItem({gem, addList, list}) {
     return (
         <Segment>
             <h1>{gem.name} {gem.version}</h1>
-            <p>Downloads: {gem.downloads}</p>
+            <Statistic label='Downloads' value={gem.downloads.toLocaleString()}/>
             <p>{gem.info}</p>
             <p>Creator(s): {gem.authors}</p>
             {checkSaved ? <Button basic size='tiny' color='pink' disabled >saved</Button> : <Button onClick={handleSave} size='tiny' color='pink'>save</Button>}
