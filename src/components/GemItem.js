@@ -1,29 +1,25 @@
 import { useState } from 'react'
 import { Segment, Button } from 'semantic-ui-react'
 
-function GemItem({gem, addList, removeList}) {
-    const [save, setSave] = useState(false)
+function GemItem({gem, addList, list}) {
+
+    //check to see if gem is in saved list or not
+    const checkSaved = list.find(item => item.gem_uri === gem.gem_uri)
 
     function handleSave() {
         addList(gem)
-        setSave(true)
     }
-
-    // used gem_uri as identifier so that we can filter and handle the remove function from app component
-    function handleUnsave() {
-        removeList(gem.gem_uri)
-        setSave(false)
-    }
-    // console.log(save)
+ 
     return (
         <Segment>
             <h1>{gem.name} {gem.version}</h1>
             <p>Downloads: {gem.downloads}</p>
             <p>{gem.info}</p>
             <p>Creator(s): {gem.authors}</p>
-            {save ? <Button size='small' basic color='pink' onClick={handleUnsave}>unsave</Button> : <Button size='small' color='pink' onClick={handleSave}>save</Button>}
+            {checkSaved ? <Button basic size='tiny' color='pink' disabled >saved</Button> : <Button onClick={handleSave} size='tiny' color='pink'>save</Button>}
         </Segment>
     )
 }
 
 export default GemItem;
+

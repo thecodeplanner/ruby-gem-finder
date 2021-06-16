@@ -44,15 +44,10 @@ function App() {
         <Header />
         <Search setGems={setGems} />
       </Segment>
-      <Grid columns={2}>
-        <Grid.Column>
-          {gems ? <GemsList gems={gems} addList={addList} removeList={removeList}/> : null}
-      </Grid.Column>
-      <Grid.Column>
-          {(list.length >= 1) ? <SavedList list={list} /> : null}
-      </Grid.Column>
-      </Grid>
-   
+          {gems ? <GemsList gems={gems} addList={addList} list={list}/> : null}
+      
+          {(list.length >= 1) ? <SavedList list={list} removeList={removeList}/> : null}
+
     </div>
   );
 }
