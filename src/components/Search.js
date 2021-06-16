@@ -7,18 +7,12 @@ function Search({setGems}) {
         e.preventDefault()
         fetch(`/api/v1/search.json?query=${search}`)
             .then(res => res.json())
-            .then(gemData => handleData(gemData))
-
-            function handleData(gemData) {
-                if (gemData.message ==='Not Found') {
-                    alert(`${search} was not found. Please try again.`)
+            .then(gemData => {
+                if (gemData.length === 0) {
+                    alert(`${search} was not found. Please try again`)
                     e.target.reset()
-                }else {
-                    setGems(gemData)
-                    e.target.reset()
-                }
-            }
-
+                }setGems(gemData)
+            })
     }
 
     return (
