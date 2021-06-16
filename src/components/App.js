@@ -5,7 +5,7 @@ import SavedList from './SavedList'
 import Home from './Home'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { Segment, Container } from 'semantic-ui-react'
+// import { Segment, Container } from 'semantic-ui-react'
 
 function App() {
   const [gems, setGems] = useState(null)
