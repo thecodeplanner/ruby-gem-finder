@@ -2,18 +2,27 @@ import Header from './components/Header'
 import Search from './components/Search'
 import GemsList from './components/GemsList'
 import SavedList from './components/SavedList'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 function App() {
   const [gems, setGems] = useState(null)
   const [list, setList] = useState([])
 
-  console.log(gems)
-  console.log(list)
+  useEffect(() => {
+    let data = localStorage.getItem('savedGems')
+    if (data) {
+      setList(JSON.parse(data))
+    }
+  }, [])
+
+  // console.log(gems)
+  // console.log(list)
 
   function addList(addedGem) {
-    setList([...list, addedGem])
+    const newSavedList = [...list, addedGem]
+    setList(newSavedList)
+    localStorage.setItem('savedGems', JSON.stringify(newSavedList))
   }
 
 // create a function to remove a saved gem from the list by filtering through an identifier
@@ -21,8 +30,9 @@ function App() {
     const filteredList = list.filter(gem => {
       return (gem.gem_uri !== removedGem)
     })
-    console.log(filteredList)
+    // console.log(filteredList)
     setList(filteredList)
+    localStorage.setItem('savedGems', JSON.stringify(filteredList))
 
   }
 

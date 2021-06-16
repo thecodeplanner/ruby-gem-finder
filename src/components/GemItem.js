@@ -13,7 +13,7 @@ function GemItem({gem, addList, removeList}) {
         removeList(gem.gem_uri)
         setSave(false)
     }
-    console.log(save)
+    // console.log(save)
     return (
         <div>
             <h1>{gem.name} {gem.version}</h1>
