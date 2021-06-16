@@ -1,5 +1,5 @@
 import Header from './Header'
-import Search from './Search'
+import Search from './SearchBar'
 import GemsList from './GemsList'
 import SavedList from './SavedList'
 import Home from './Home'
@@ -10,6 +10,18 @@ import { useState, useEffect } from 'react'
 function App() {
   const [gems, setGems] = useState(null)
   const [list, setList] = useState([])
+  const [search, setSearch] = useState('')
+  // const [page, setNextPage] = useState(1)
+
+  useEffect(() => {
+    fetch(`/api/v1/search.json?query=${search}`)
+        .then(res => res.json())
+        .then(gemData => {
+          if (gemData.length === 0) {
+            alert(`${search} was not found. Please try again`)
+          }setGems(gemData)
+        })
+        }, [search])
 
   useEffect(() => {
     let data = localStorage.getItem('savedGems')
@@ -45,7 +57,7 @@ function App() {
             <Home />
           </Route>
           <Route exact path='/search'>
-            <Search setGems={setGems} />
+            <Search setGems={setGems} setSearch={setSearch} />
             {gems ? <GemsList gems={gems} addList={addList} list={list}/> : null}
           </Route>
           <Route exact path='/saved'>

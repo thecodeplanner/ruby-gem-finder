@@ -32,7 +32,7 @@ code {
 
 .find-text {
   font-family: 'Staatliches', 'cursive';
-  font-size: 30px;
+  font-size: 35px;
   color: #BB371A;
 }
 
@@ -45,4 +45,10 @@ code {
 .gem-info {
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
+}
+
+#label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: white;
 }
