@@ -10,7 +10,6 @@ function App() {
   const [gems, setGems] = useState(null)
   const [list, setList] = useState([])
   const [search, setSearch] = useState('')
-  // const [page, setNextPage] = useState(1)
 
   useEffect(() => {
     fetch(`/api/v1/search.json?query=${search}`)
@@ -60,7 +59,8 @@ function App() {
             {gems ? <GemsList gems={gems} addList={addList} list={list}/> : null}
           </Route>
           <Route exact path='/saved'>
-            {(list.length >= 1) ? <SavedList list={list} removeList={removeList}/> : null}
+            {(list.length >= 1) ? <SavedList list={list} removeList={removeList}/> :
+            <h1 className='find-text'>You currently do not have any saved gems.</h1>}
           </Route>
         </Switch>
       </Router>

@@ -1,6 +1,5 @@
 import { Segment, Button, Statistic } from 'semantic-ui-react'
 
-
 function SavedGem({gem, removeList}) {
 
     // used gem_uri as identifier so that we can filter and handle the remove function from app component
