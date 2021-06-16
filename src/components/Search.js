@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Container, Form, Button } from 'semantic-ui-react'
 
 function Search({setGems}) {
     const [search, setSearch] = useState('')
@@ -16,21 +17,21 @@ function Search({setGems}) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <Container style={{ marginTop: '3em' }}>
+            <Form onSubmit={handleSubmit} align='center'>
+                <Form.Field inline>
                 <input 
                     type='text'
                     placeholder='search for gem'    
                     onChange={(e) => setSearch(e.target.value)}            
                 />
-                <input 
-                    type='submit'
-                    value='find'
-                />
-            </form>
-        </div>
+                </Form.Field>
+                <Button type='submit'> Find </Button>
+            </Form>
+        </Container>
 
     )
+    
 }
 
 export default Search;

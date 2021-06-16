@@ -1,8 +1,10 @@
-import Header from './components/Header'
-import Search from './components/Search'
-import GemsList from './components/GemsList'
-import SavedList from './components/SavedList'
+import Header from './Header'
+import Search from './Search'
+import GemsList from './GemsList'
+import SavedList from './SavedList'
 import { useState, useEffect } from 'react'
+import { Segment, Grid } from 'semantic-ui-react'
+
 
 
 function App() {
@@ -38,10 +40,19 @@ function App() {
 
   return (
     <div >
-      <Header />
-      <Search setGems={setGems} />
-      {gems ? <GemsList gems={gems} addList={addList} removeList={removeList}/> : null}
-      {(list.length >= 1) ? <SavedList list={list} /> : null}
+      <Segment>
+        <Header />
+        <Search setGems={setGems} />
+      </Segment>
+      <Grid columns={2}>
+        <Grid.Column>
+          {gems ? <GemsList gems={gems} addList={addList} removeList={removeList}/> : null}
+      </Grid.Column>
+      <Grid.Column>
+          {(list.length >= 1) ? <SavedList list={list} /> : null}
+      </Grid.Column>
+      </Grid>
+   
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import GemItem from './GemItem'
+import { Container } from 'semantic-ui-react'
 
 function GemsList({gems, addList, removeList}) {
 
@@ -8,10 +9,10 @@ function GemsList({gems, addList, removeList}) {
         )
     })
     return (
-        <div>
+        <Container text>
             <h1>Here are all the gems we found from your search:</h1>
             {gemItems}
-        </div>
+        </Container>
     )
 }
 

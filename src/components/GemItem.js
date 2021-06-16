@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Segment, Button } from 'semantic-ui-react'
 
 function GemItem({gem, addList, removeList}) {
     const [save, setSave] = useState(false)
@@ -15,14 +16,13 @@ function GemItem({gem, addList, removeList}) {
     }
     // console.log(save)
     return (
-        <div>
+        <Segment>
             <h1>{gem.name} {gem.version}</h1>
-            <p>{gem.info}</p>
             <p>Downloads: {gem.downloads}</p>
+            <p>{gem.info}</p>
             <p>Creator(s): {gem.authors}</p>
-            {save ? <button onClick={handleUnsave}>unsave</button> : <button onClick={handleSave}>save</button>}
-        </div>
-
+            {save ? <Button size='small' basic color='pink' onClick={handleUnsave}>unsave</Button> : <Button size='small' color='pink' onClick={handleSave}>save</Button>}
+        </Segment>
     )
 }
 

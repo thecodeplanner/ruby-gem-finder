@@ -1,4 +1,6 @@
 import SavedGem from './SavedGem'
+import { Container } from 'semantic-ui-react'
+
 
 function SavedList({list}) {
 
@@ -8,10 +10,10 @@ function SavedList({list}) {
         )
     })
     return (
-        <div>
+        <Container text>
             <h1>Saved Gems:</h1>
             {savedGems}
-        </div>
+        </Container>
     )
 }
 
