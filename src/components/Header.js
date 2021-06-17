@@ -6,7 +6,7 @@ function Header() {
     const [activeItem, setActiveItem] = useState('')
     return (
         <div className='header'>
-            <Container textAlign='center' style={{ padding: '3em'}}>
+            <Container textAlign='center' style={{ padding: '3em' }}>
                 <h1 className='title'>Ruby Gem Finder <Icon name='gem outline' /></h1>
             </Container>
             <Menu size='huge' >
