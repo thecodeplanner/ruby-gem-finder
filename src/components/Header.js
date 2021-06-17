@@ -5,8 +5,8 @@ import { useState } from 'react'
 function Header() {
     const [activeItem, setActiveItem] = useState('')
     return (
-        <>
-            <Container textAlign='center' style={{ margin: '3em'}}>
+        <div className='header'>
+            <Container textAlign='center' style={{ padding: '3em'}}>
                 <h1 className='title'>Ruby Gem Finder <Icon name='gem outline' /></h1>
             </Container>
             <Menu size='huge'>
@@ -20,7 +20,7 @@ function Header() {
                     <Menu.Item name='saved gems' active={activeItem === 'saved gems'} onClick={() => setActiveItem('saved gems')} />
                 </NavLink>
             </Menu>
-        </>
+        </div>
     )
 }
 

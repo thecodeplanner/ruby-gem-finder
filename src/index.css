@@ -14,11 +14,14 @@ code {
     monospace;
 }
 
+.header {
+  background-color: #cd492b;
+}
 
 .title {
     font-family: 'Staatliches', 'cursive';
     font-size: 60px;
-    color: #BB371A;
+    color: white;
 }
 
 .home-title {
@@ -33,7 +36,7 @@ code {
 .find-text {
   font-family: 'Staatliches', 'cursive';
   font-size: 35px;
-  color: #BB371A;
+  color: white;
   text-align: center;
 }
 

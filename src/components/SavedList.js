@@ -10,7 +10,7 @@ function SavedList({list, removeList}) {
         )
     })
     return (
-        <Container text>
+        <Container text >
             <h1 className='find-text'>Number of Saved Gem(s): {list.length}</h1>
             {savedGems}
         </Container>

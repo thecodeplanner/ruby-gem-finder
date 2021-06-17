@@ -10,7 +10,7 @@ function GemsList({gems, addList, list}) {
     })
     return (
         <Container text>
-            {{gems} ? <h1 className='find-text'>Here are all the gems we've mined from your search:</h1> : null}
+            {{gems} ? <h1 className='find-text'>Here's what we dug up! Check out the gems we've mined from your search!</h1> : null}
             {gemItems}
         </Container>
     )
