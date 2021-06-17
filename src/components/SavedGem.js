@@ -10,10 +10,10 @@ function SavedGem({gem, removeList}) {
     return (
         <Segment style={{ padding: '3em', backgroundColor: 'white' }}>
             <h1 className='gem-name'>{gem.name} {gem.version}</h1>
-            <Statistic size='tiny' label='Downloads' value={gem.downloads.toLocaleString()}/>
+            <Statistic size='small' label='Downloads' value={gem.downloads.toLocaleString()}/>
             <p className='gem-info'>{gem.info}</p>
             <p className='gem-info'>Creator(s): {gem.authors}</p>
-            <Button size='small' basic color='red' onClick={handleUnsave}>unsave</Button>
+            <Button size='large' basic color='red' onClick={handleUnsave}>unsave</Button>
         </Segment>
     )
 }
