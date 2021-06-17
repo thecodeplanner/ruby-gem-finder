@@ -4,4 +4,4 @@ This app was created for users to search and find more information about Ruby Ge
 
 ## Tech
 
-This project was built as a single page React app, using the [RubyGems API](https://guides.rubygems.org/rubygems-org-api/), Hooks, localStorage and Semantic UI for styling.
+This project was built as a single page React app, using Hooks, localStorage, Semantic UI, and the [RubyGems API](https://guides.rubygems.org/rubygems-org-api/).
