@@ -14,8 +14,16 @@ code {
     monospace;
 }
 
-.header {
+.header{
   background-color: #cd492b;
+}
+
+.link {
+  color: #cd492b;
+}
+
+.link:hover {
+  color: rgb(50, 50, 50);
 }
 
 .title {
@@ -27,10 +35,12 @@ code {
 .home-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
+  color: rgb(50, 50, 50);
 }
 .home-text {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
+  color: rgb(50, 50, 50);
 }
 
 .find-text {
@@ -43,12 +53,14 @@ code {
 .gem-name {
   font-family: 'Staatliches', 'cursive';
   font-size: 40px;
+  color: rgb(50, 50, 50);
 }
 
 
 .gem-info {
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
+  color: rgb(50, 50, 50);
 }
 
 #label {
