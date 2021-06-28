@@ -1,5 +1,5 @@
 import Header from './Header'
-import Search from './SearchBar'
+import SearchBar from './SearchBar'
 import GemsList from './GemsList'
 import SavedList from './SavedList'
 import Home from './Home'
@@ -55,7 +55,7 @@ function App() {
             <Home />
           </Route>
           <Route exact path='/search'>
-            <Search setSearch={setSearch} />
+            <SearchBar setSearch={setSearch} />
             {gems ? <GemsList gems={gems} addList={addList} list={list} /> : null}
           </Route>
           <Route exact path='/saved'>
