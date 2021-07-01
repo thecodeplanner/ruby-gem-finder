@@ -12,13 +12,16 @@ function App() {
   const [search, setSearch] = useState('')
 
   useEffect(() => {
+    if (search !== '') { 
     fetch(`/api/v1/search.json?query=${search}`)
       .then(res => res.json())
       .then(gemData => {
         if (gemData.length === 0) {
           alert(`${search} was not found. Please try again`)
         } setGems(gemData)
-      })
+    })}else {
+      setGems(null)
+    }
   }, [search])
 
   useEffect(() => {
@@ -56,10 +59,10 @@ function App() {
           </Route>
           <Route exact path='/search'>
             <SearchBar setSearch={setSearch} />
-            {gems ? <GemsList gems={gems} addList={addList} list={list} /> : null}
+            {gems ? <GemsList gems={gems} addList={addList} list={list} removeList={removeList} /> : null}
           </Route>
           <Route exact path='/saved'>
-            {(list.length >= 1) ? <SavedList list={list} removeList={removeList} /> :
+            {(list.length >= 1) ? <SavedList addList={addList} list={list} removeList={removeList} /> :
               <h1 className='find-text'>You currently do not have any saved gems.</h1>}
           </Route>
         </Switch>

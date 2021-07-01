@@ -1,13 +1,12 @@
-import SavedGem from './SavedGem'
+import GemItem from './GemItem'
 import { Container } from 'semantic-ui-react'
 
 
-function SavedList({list, removeList}) {
+function SavedList({ addList, list, removeList}) {
 
     let savedGems = list.map((gem) => {
         return (
-            <SavedGem key={gem.gem_uri} gem={gem} removeList={removeList} />
-        )
+            <GemItem key={gem.gem_uri} gem={gem} addList={addList} list={list} removeList={removeList}/>        )
     })
     return (
         <Container text >
