@@ -1,5 +1,5 @@
 import { Container, Icon, Menu } from 'semantic-ui-react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
 function Header() {
@@ -10,15 +10,9 @@ function Header() {
                 <h1 className='title'>Ruby Gem Finder <Icon name='gem outline' /></h1>
             </Container>
             <Menu size='huge' >
-                <NavLink to='/' exact>
-                    <Menu.Item name='home' active={activeItem === 'home'} onClick={() => setActiveItem('home')} />
-                </NavLink>
-                <NavLink to='/search' exact >
-                    <Menu.Item name='search' active={activeItem === 'search'} onClick={() => setActiveItem('search')} />
-                </NavLink>
-                <NavLink to='/saved' exact >
-                    <Menu.Item name='saved gems' active={activeItem === 'saved gems'} onClick={() => setActiveItem('saved gems')} />
-                </NavLink>
+                <Menu.Item as={Link} to='/' name='home' active={activeItem === 'home'} onClick={() => setActiveItem('home')} />
+                <Menu.Item as={Link} to='/search' name='search' active={activeItem === 'search'} onClick={() => setActiveItem('search')} />
+                <Menu.Item as={Link} to='/saved' name='saved gems' active={activeItem === 'saved gems'} onClick={() => setActiveItem('saved gems')} />
             </Menu>
         </div>
     )
